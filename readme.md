@@ -17,6 +17,13 @@ this application tweets a random name from the [yorubaname](http://www.yorubanam
 * this should open up the folder you just cloned from github
 * open up your code editor
 
+### setting up environment variables
+* Run the command below to create a `.env` file with duplicates of the env variables specified in `.env.example`. Then update the `.env` file with the relevant data
+
+```bash
+$ cp .env.example .env
+```
+
 
 ## usage
 ### running the code
