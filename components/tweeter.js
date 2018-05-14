@@ -18,11 +18,14 @@ var secret = {
 // make a new twitter object that takes in the api keys
 var Twitter = new TwitterPackage(secret);
 
-// get reques to yoruba names api
+var randomCount = _.random(1, 100)
+var randomPage = _.random(1, 62) // 62 is the max number of pages of 100 names/content available via the API
+
+// get request to yoruba names api
 function retrieveTweet () {
   const http = require("http");
   const url =
-    "http://www.yorubaname.com/v1/names?count=5000";
+    `http://www.yorubaname.com/v1/names?page=${randomPage}&count=${randomCount}&state=PUBLISHED`;
   http.get(url, res => {
     res.setEncoding("utf8");
     let body = "";
@@ -33,10 +36,10 @@ function retrieveTweet () {
       body = JSON.parse(body);
 
       // pick a random name from JSON repsonse without repeating
-      var randomName = _.shuffle(body)[0];
+      var randomName = _.sample(body);
       console.log(randomName);
       // create link for random name
-      var linkBack = "http://www.yorubaname.com/entries/" + randomName["name"];
+      var linkBack = `http://www.yorubaname.com/entries/${randomName["name"]}`;
       console.log(randomName["name"]+ "\n" + randomName["meaning"] + "\n" + linkBack);
 
       // posting to twitter
