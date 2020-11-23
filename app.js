@@ -2,7 +2,8 @@
   require('dotenv').config();
 
 // get cron duration
-  var cron_duration_hrs = parseInt( process.env.TWEETER_CRON_DURATION_HRS );
+  var cron_duration_hrs = process.env.TWEETER_CRON_DURATION_HRS;
+  console.log('env', process.env.TWEETER_CRON_DURATION_HRS)
 
 if( cron_duration_hrs ){
   console.log( 'cron duration detected. running in cron mode' );

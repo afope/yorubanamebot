@@ -23,10 +23,11 @@ var randomPage = _.random(1, 62) // 62 is the max number of pages of 100 names/c
 
 // get request to yoruba names api
 function retrieveTweet () {
-  const http = require("http");
+  // const http = require("http");
+  var https = require('https');
   const url =
-    `http://www.yorubaname.com/v1/names?page=${randomPage}&count=${randomCount}&state=PUBLISHED`;
-  http.get(url, res => {
+    `https://www.yorubaname.com/v1/names?page=${randomPage}&count=${randomCount}&state=PUBLISHED`;
+  https.get(url, res => {
     res.setEncoding("utf8");
     let body = "";
     res.on("data", data => {
