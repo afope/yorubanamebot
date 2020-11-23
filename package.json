@@ -17,7 +17,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node clock.js"
+    "start": "clock: npm start"
   },
   "engines": {
     "node": "9.7.1",
