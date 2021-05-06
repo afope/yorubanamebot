@@ -7,7 +7,7 @@
       "find-package-json": "^1.0.0",
       "http": "0.0.0",
       "twitter": "^1.7.1",
-      "underscore": "^1.8.3",
+      "underscore": "^1.12.1",
       "underscore-node": "^0.1.2"
     },
     "name": "yorubabot",
